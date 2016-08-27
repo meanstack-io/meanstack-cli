@@ -1,0 +1,45 @@
+{
+  "name": "meanstack-cli",
+  "version": "0.3.5",
+  "description": "MEANStack.io bringing together the best of MEAN MongoDB, Express, AngularJS and Node.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/meanstack-io/meanstack-cli.git"
+  },
+  "main": "bin/meanstack-cli.js",
+  "bin": {
+    "meanstack": "bin/meanstack-cli.js"
+  },
+  "scripts": {
+    "test": "mocha"
+  },
+  "keywords": [
+    "meanstack-cli",
+    "meanstack.io-cli",
+    "meanstack.io",
+    "meanstack",
+    "mean",
+    "framework",
+    "framework meanstack",
+    "framework mean"
+  ],
+  "author": "Rafael Pegorari <rafapegorari@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/meanstack-io/meanstack-cli/issues"
+  },
+  "homepage": "http://meanstack.io",
+  "dependencies": {
+    "bluebird": "^3.4.1",
+    "commander": "~2.9.0",
+    "shelljs": "^0.7.0"
+  },
+  "devDependencies": {
+    "chai": "^3.5.0",
+    "mocha": "^2.5.3"
+  },
+  "engines": {
+    "node": ">= 0.12.0",
+    "npm": ">= 2.5.1"
+  }
+}

@@ -1,0 +1,76 @@
+/**
+ * {{Controller}}
+ *
+ * Generate by make:controller
+ */
+
+'use strict';
+
+/**
+ * Module dependencies.
+ */
+var router = require('meanstack').Router();{{Model}}
+
+/*
+ |-----------------------------------------------------------------------------------
+ | Controller {{Controller}}
+ |-----------------------------------------------------------------------------------
+ |
+ | Method      Action      Return      Description
+ | GET         index       Html        index {{Controller}}.                   /{{Controller}}
+ | GET         load        Json        Load {{Controller}}(s).                 /{{Controller}}/load
+ | GET	       create      Html        Create {{Controller}}.                  /{{Controller}}/create
+ | POST        store       Json        Store {{Controller}}.                   /{{Controller}}
+ | GET         show        Html        Preview {{Controller}}.                 /{{Controller}}/{{{Controller}}}
+ | GET	       edit        Html        Edit {{Controller}}.                    /{{Controller}}/{{{Controller}}}/edit
+ | GET         load        Json        Load {{Controller}} for show or edit.   /{{Controller}}/{{{Controller}}}/load
+ | PUT/PATCH   update      Json        Update {{Controller}}.                  /{{Controller}}/{{{Controller}}}
+ | DELETE      destroy     Json        Delete {{Controller}}.                  /{{Controller}}/{{{Controller}}}
+ */
+
+// Index
+router.get('/', function (req, res) {
+
+});
+
+// Load
+router.get('/load', function (req, res) {
+
+});
+
+// Create
+router.get('/create', function (req, res) {
+
+});
+
+// Store
+router.post('/', function (req, res) {
+
+});
+
+// Show
+router.get('/:{{Controller}}', function (req, res) {
+
+});
+
+// Edit
+router.get('/:{{Controller}}/edit', function (req, res) {
+
+});
+
+// Load {{Controller}}
+router.get('/:{{Controller}}/load', function (req, res) {
+
+});
+
+// Update
+router.put('/:{{Controller}}', function (req, res) {
+
+});
+
+// Delete
+router.delete('/:{{Controller}}', function (req, res) {
+
+});
+
+module.exports = router;

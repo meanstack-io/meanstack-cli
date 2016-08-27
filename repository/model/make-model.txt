@@ -1,0 +1,34 @@
+/**
+ * {{Model}}
+ *
+ * Generate by make:model
+ */
+
+'use strict';
+
+/**
+ * Module dependencies.
+ */
+var database = require("meanstack").database,
+    Schema = database.Schema;
+
+/**
+ * Schema {{Model}}.
+ *
+ * @type {*|Schema}
+ */
+var {{Model}}Schema = new Schema(
+    {
+        // Fields
+    }
+);
+
+/**
+ * Create model {{Model}}.
+ */
+var {{Model}} = database.model("{{CollectionName}}", {{Model}}Schema);
+
+/**
+ * Export model {{Model}}.
+ */
+module.exports = {{Model}};

@@ -1,0 +1,33 @@
+/**
+ * {{Seed}}
+ *
+ * Generate by make:seed
+ */
+
+'use strict';
+
+/**
+ * Module dependencies.
+ */
+var {{Model}} = require('{{ModelPath}}');
+
+/**
+ * Seed type, object or function.
+ *   Function need return object.
+ *
+ * @type {{}|Function}
+ */
+var seed = {
+    //
+};
+
+/**
+ * Exports
+ *   {{document: {data: ({}|Function), [loop: number]}, model: Schema}}
+ */
+module.exports = {
+    document: {
+        data: seed
+    },
+    model: {{Model}}
+};

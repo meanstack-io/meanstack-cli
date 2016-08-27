@@ -1,0 +1,29 @@
+/**
+ * {{Controller}}
+ *
+ * Generate by make:controller
+ */
+
+'use strict';
+
+/**
+ * Module dependencies.
+ */
+var router = require('meanstack').Router();{{Model}}
+
+/*
+ |-----------------------------------------------------------------------------------
+ | Controller {{Controller}}
+ |-----------------------------------------------------------------------------------
+ |
+ | Method      Action      Return      Description
+ | GET         index       Html        index {{Controller}}.                   /{{Controller}}
+ |
+ */
+
+// Index
+router.get('/', function (req, res) {
+
+});
+
+module.exports = router;

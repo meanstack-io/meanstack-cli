@@ -1,0 +1,25 @@
+/**
+ * {{Request}}
+ *
+ * Generate by make:request
+ */
+
+'use strict';
+
+/**
+ * Module dependencies.
+ */
+var validator = require('meanstack/lib/validation');
+
+var {{Request}} = function () {
+
+    /**
+     * Rules. [Required]
+     *
+     */
+    this.rules = {
+        // rules
+    };
+};
+
+module.exports = validator({{Request}});
