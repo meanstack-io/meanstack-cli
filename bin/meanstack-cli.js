@@ -34,7 +34,7 @@ program
     .option('-e, --nodeEnv <nodeEnv>', 'Environment mode.', 'development')
     .option('-p, --port <port>', 'Environment variable PORT.')
     .option('-d, --debug <debug>', 'Use the debug module for log information about application.')
-    .option('-n, --nodemon', 'Nodemon is a utility that will monitor for any changes in your source and automatically restart your server. Perfect for development.', true)
+    .option('-n, --nodemon <nodemon>', 'Nodemon is a utility that will monitor for any changes in your source and automatically restart your server. Perfect for development. By default it is used.', true)
     .description('Run application MEANStack')
     .action(require('../lib/commands/run'));
 
