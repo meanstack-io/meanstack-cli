@@ -1,0 +1,36 @@
+<section class="section tertiary">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4 col-md-offset-4">
+                <div class="row">
+                    <div class="col-md-12">
+                        <h1>Forgot password
+                            <small>MEANStack.io</small>
+                        </h1>
+
+                        <form ng-submit="forgotSendEmail()">
+                            <div class="form-group">
+                                <label for="email" class="sr-only col-md-12">Email address</label>
+
+                                <input type="email" id="email" name="email" ng-model="email" class="form-control"
+                                       placeholder="Email address" required="" autofocus="">
+                            </div>
+
+                            <div class="form-group">
+                                <button class="btn btn-default btn-block" type="submit">Submit</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-12">
+                        <a ui-sref="signin">
+                            < Back
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

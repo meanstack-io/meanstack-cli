@@ -74,6 +74,11 @@ program
     .description('Make seed.')
     .action(require('../lib/commands/make/seed'));
 
+program
+    .command('make:auth')
+    .description('Make auth.')
+    .action(require('../lib/commands/make/auth'));
+
 // Show help on unknown commands
 program.on('*', function () {
     program.help();
