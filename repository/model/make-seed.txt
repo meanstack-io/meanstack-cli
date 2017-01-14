@@ -13,9 +13,9 @@ var {{Model}} = require('{{ModelPath}}');
 
 /**
  * Seed type, object or function.
- *   Function need return object.
+ *   Function need return object or Array.
  *
- * @type {{}|Function}
+ * @type {{}|Function|Array}
  */
 var seed = {
     //
