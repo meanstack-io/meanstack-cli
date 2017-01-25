@@ -24,7 +24,7 @@ program
     .command('new <path_app>')
     .option('-d, --verifyDependencies <verifyDependencies>', 'Verify dependencies.', true)
     .option('-g, --git', 'Use Git, SVN will be used by default with web URL.')
-    .option('-v, --version <version>', 'Specify the version. "MASTER" by default will be used.', 'master')
+    .option('-b, --branch <branch>', 'Specify the branch version.')
     .description('Create a new MEANStack application')
     .action(require('../lib/commands/new'));
 
