@@ -81,8 +81,7 @@ router.get('/forgot', function (req, res) {
 router.post('/forgot', requestForgotSendMail, function (req, res, next) {
     var email = req.body.email;
 
-    User.findOne({email: new RegExp('^' + email + '$', "i")})
-        .exec()
+    User.findOne({email: {$regex: email, $options: 'i'}})
         .then(function (user) {
             if (!user) {
                 throw new Promise.CancellationError('E-mail not found.');
@@ -135,7 +134,6 @@ router.post('/forgot', requestForgotSendMail, function (req, res, next) {
  */
 router.get('/forgot/:token', function (req, res, next) {
     User.findOne({'forgot.token': req.params.token, 'forgot.expires_at': {'$gt': new Date()}})
-        .exec()
         .then(function (user) {
             return res.render('auth/' + ((user !== null) ? 'forgot-reset' : 'forgot-token-invalid'));
         })
@@ -149,7 +147,6 @@ router.get('/forgot/:token', function (req, res, next) {
  */
 router.post('/forgot/:token', requestForgotResetPassword, function (req, res, next) {
     User.findOne({'forgot.token': req.params.token, 'forgot.expires_at': {'$gt': new Date()}})
-        .exec()
         .then(function (user) {
             if (!user) {
                 throw new Promise.CancellationError('Token expired.');
