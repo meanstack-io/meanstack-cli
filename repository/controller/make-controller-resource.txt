@@ -16,17 +16,18 @@ var router = require('meanstack').Router();{{Model}}
  | Controller {{Controller}}
  |-----------------------------------------------------------------------------------
  |
- | Method      Action      Return      Description
- | GET         index       Html        index {{Controller}}.                   /{{Controller}}
- | GET         load        Json        Load {{Controller}}(s).                 /{{Controller}}/load
- | GET	       create      Html        Create {{Controller}}.                  /{{Controller}}/create
- | POST        store       Json        Store {{Controller}}.                   /{{Controller}}
- | GET         show        Html        Preview {{Controller}}.                 /{{Controller}}/{{{Controller}}}
- | GET	       edit        Html        Edit {{Controller}}.                    /{{Controller}}/{{{Controller}}}/edit
- | GET         load        Json        Load {{Controller}} for show or edit.   /{{Controller}}/{{{Controller}}}/load
- | PUT/PATCH   update      Json        Update {{Controller}}.                  /{{Controller}}/{{{Controller}}}
- | DELETE      destroy     Json        Delete {{Controller}}.                  /{{Controller}}/{{{Controller}}}
- */
+ | Method      Router                                  Action      return      Description                                Resource AngularJS
+ | GET         /{{Controller}}                         Index       Html        index {{Controller}}.                      ---
+ | GET         /{{Controller}}/load/{page}             Load        [Json]      Load {{Controller}}(s).                    loadPage(page)
+ | GET         /{{Controller}}/create                  Create      Html        Create {{Controller}}.                     ---
+ | POST        /{{Controller}}                         Store       Json        Store {{Controller}}.                      save({{Controller}})
+ | GET         /{{Controller}}/{{{Controller}}}        Show        Html        Preview {{Controller}}.                    ---
+ | GET         /{{Controller}}/{{{Controller}}}/edit   Edit        Html        Edit {{Controller}}.                       ---
+ | GET         /{{Controller}}/{{{Controller}}}/load   Load        Json        Load {{Controller}} for show or edit.      load({{Controller}})
+ | PUT/PATCH   /{{Controller}}/{{{Controller}}}        Update      Json        Update {{Controller}}.                     update({{Controller}})
+ | DELETE      /{{Controller}}/{{{Controller}}}        Destroy     Json        Delete {{Controller}}.                     delete({{Controller}})
+ | GET         /{{Controller}}/query                   Query       [Json]      Auxiliary function for find doc.[Option]   query(params)
+*/
 
 // Index
 router.get('/', function (req, res) {
@@ -34,7 +35,7 @@ router.get('/', function (req, res) {
 });
 
 // Load
-router.get('/load', function (req, res) {
+router.get('/load/:page', function (req, res) {
 
 });
 
@@ -71,6 +72,11 @@ router.put('/:{{Controller}}', function (req, res) {
 // Delete
 router.delete('/:{{Controller}}', function (req, res) {
 
+});
+
+// Query
+router.get('/:{{Controller}}/query', function (req, res) {
+    // req.query
 });
 
 module.exports = router;
