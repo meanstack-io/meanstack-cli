@@ -1,6 +1,6 @@
 angular.module("App")
-    .controller("signInController", ['$scope', '$state', 'toaster', '$stateParams', 'authService', 'auth',
-        function ($scope, $state, toaster, $stateParams, authService, auth) {
+    .controller("signInController", ['$scope', '$rootScope', '$state', 'toaster', '$stateParams', 'authService', 'auth',
+        function ($scope, $rootScope, $state, toaster, $stateParams, authService, auth) {
 
             /**
              * Parameters redirection when login.
@@ -19,9 +19,24 @@ angular.module("App")
              * Sign in
              */
             $scope.signIn = function () {
+                // Clear message.
+                toaster.clear();
+
                 authService.signIn({
                     email: $scope.email,
                     password: $scope.password
+                }).success(function (response) {
+                    // Alter username navbar.
+                    $rootScope.$emit('username', response.data.username);
+
+                    // Get parameters for redirect
+                    var paramsRedirectionLogin = auth.paramsRedirectionLogin();
+
+                    // Go to page redirect.
+                    return $state.go(paramsRedirectionLogin.redirect, paramsRedirectionLogin.params);
+
+                }).error(function (response) {
+                    return toaster.error("Error", response.msg.join('<br>'));
                 });
             };
         }]);

@@ -1,6 +1,6 @@
 angular.module("App")
-    .controller('navController', ['$scope', '$rootScope', '$templateCache', '$state', 'authService',
-        function ($scope, $rootScope, $templateCache, $state, authService) {
+    .controller('navController', ['$scope', '$rootScope', '$state', 'authService', 'toaster',
+        function ($scope, $rootScope, $state, authService, toaster) {
 
             /**
              * Alter username nav.
@@ -13,6 +13,12 @@ angular.module("App")
              * Logoff
              */
             $scope.logout = function () {
-                authService.logout();
+                authService.logout()
+                    .success(function () {
+                        return $state.go('home');
+                    })
+                    .error(function () {
+                        toaster.error("Error in logout");
+                    });
             };
         }]);
