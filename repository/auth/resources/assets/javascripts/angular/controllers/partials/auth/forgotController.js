@@ -5,12 +5,12 @@ angular.module("App")
             $scope.forgotSendEmail = function () {
                 authService.forgotSendEmail({
                     email: $scope.email
-                }).success(function (response) {
-                    toaster.success("Success", response.msg.join('<br>'));
+                }).then(function (response) {
+                    toaster.success("Success", response.data.msg.join('<br>'));
 
                     return $state.go('home');
-                }).error(function (response) {
-                    return toaster.error("Error", response.msg.join('<br>'));
+                }).catch(function (response) {
+                    return toaster.error("Error", response.data.msg.join('<br>'));
                 });
             };
 
@@ -21,12 +21,12 @@ angular.module("App")
                         password: $scope.password,
                         repassword: $scope.repassword
                     }
-                ).success(function (response) {
-                    toaster.success("Success", response.msg.join('<br>'));
+                ).then(function (response) {
+                    toaster.success("Success", response.data.msg.join('<br>'));
 
                     return $state.go('signin');
-                }).error(function (response) {
-                    return toaster.error("Error", response.msg.join('<br>'));
+                }).catch(function (response) {
+                    return toaster.error("Error", response.data.msg.join('<br>'));
                 });
             };
         }]);

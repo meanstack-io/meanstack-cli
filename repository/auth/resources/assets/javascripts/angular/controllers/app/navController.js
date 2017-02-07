@@ -14,10 +14,10 @@ angular.module("App")
              */
             $scope.logout = function () {
                 authService.logout()
-                    .success(function () {
+                    .then(function () {
                         return $state.go('home');
                     })
-                    .error(function () {
+                    .catch(function () {
                         toaster.error("Error in logout");
                     });
             };

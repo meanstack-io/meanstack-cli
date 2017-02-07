@@ -25,9 +25,9 @@ angular.module("App")
                 authService.signIn({
                     email: $scope.email,
                     password: $scope.password
-                }).success(function (response) {
+                }).then(function (response) {
                     // Alter username navbar.
-                    $rootScope.$emit('username', response.data.username);
+                    $rootScope.$emit('username', response.data.payload.username);
 
                     // Get parameters for redirect
                     var paramsRedirectionLogin = auth.paramsRedirectionLogin();
@@ -35,8 +35,8 @@ angular.module("App")
                     // Go to page redirect.
                     return $state.go(paramsRedirectionLogin.redirect, paramsRedirectionLogin.params);
 
-                }).error(function (response) {
-                    return toaster.error("Error", response.msg.join('<br>'));
+                }).catch(function (response) {
+                    return toaster.error("Error", response.data.msg.join('<br>'));
                 });
             };
         }]);
