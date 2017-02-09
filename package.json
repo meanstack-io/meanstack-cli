@@ -1,6 +1,6 @@
 {
   "name": "meanstack-cli",
-  "version": "0.4.5",
+  "version": "0.4.6",
   "description": "MEANStack.io bringing together the best of MEAN MongoDB, Express, AngularJS and Node.js",
   "repository": {
     "type": "git",
