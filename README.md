@@ -1,102 +1,40 @@
-# MEANStack-Client
+# MEANStack CLI
 *bringing together the best of MEAN MongoDB, Express, AngularJS and Node.js*
+
+[![Build Status](https://travis-ci.org/meanstack-io/meanstack-cli.svg)](https://travis-ci.org/meanstack-io/meanstack-cli)
+[![Coverage Status](https://coveralls.io/repos/github/meanstack-io/meanstack-cli/badge.svg)](https://coveralls.io/github/meanstack-io/meanstack-cli)
+[![npm](https://img.shields.io/npm/v/meanstack-cli.svg)](https://www.npmjs.com/package/meanstack-cli)
+[![npm](https://img.shields.io/npm/dm/meanstack-cli.svg)](https://www.npmjs.com/package/meanstack-cli)
+[![npm](https://img.shields.io/npm/l/meanstack-cli.svg)](https://www.npmjs.com/package/meanstack-cli)
+
+MEANStack.io is a web application framework with strategy geared to facilitate development.
 
 Is a solution full-stack JavaScript, develop on MongoDB, Express, AngularJS, Node.js and another stack of packages.
 
-MEANStack is a web application framework with strategy geared to facilitate development.
+## Introduction
 
-## Prerequisites
-Node.js, MongoDB, Gulp, Bower, Nodemon and MEANStack-Client.
+MEANStack CLI provides a number of helpful commands for your use while developing your application.
 
-### Install Node.js
-Installing Node.js via package manager access <a href="https://nodejs.org/en/download/package-manager/">https://nodejs.org/en/download/package-manager/</a>
+## Installation
 
-### Install MongoDB
-Installing MongoDB access <a href="https://docs.mongodb.org/manual/installation/">https://docs.mongodb.org/manual/installation/</a>
+> **Note:** This repository contains the CLI(command-line interface) of the MEANStack framework. If you want to build an application 
+using MEANStack, visit the main [MEANStack.io repository.](https://github.com/meanstack-io/meanstack.io)
 
-### Update NPM
-Before we installed the Gulp, Bower and Nodemon we recommend updating the NPM.
+Install the MEANStack CLI.
+* Install Gulp, Bower, Nodemon and **MEANStack CLI**.
 ```
-$ npm update -g npm
+$ npm install -g gulp bower nodemon meanstack-cli
 ```
+*Gulp, Bower and Nodemon they are dependencies of the project.*
 
-### Install Gulp
-```
-$ npm install -g gulp
-```
+### Listing All Available Commands
 
-### Install Bower
 ```
-$ npm install -g bower
+$ meanstack --help
 ```
 
-### Install Nodemon
-Nodemon is a utility that will monitor for any changes in your source and automatically restart your server. Perfect for development.
-```
-$ npm install -g nodemon
-```
-
-### Install MEANStack-Client
-```
-$ npm install -g meanstack-cli
-```
-
-## Getting Started
-Two steps up its application.
-
-###Create your application
-```
-$ meanstack new <path_app>
-```
-Will be cloned the repository "https://github.com/meanstack-io/meanstack.io" after will run "npm install", "bower install", "cp .env.example.js .env.js" and "gulp". 
-
-
-### Listening server
-Serve the application.
-```
-$ meanstack serve
-```
-
-### Common installation errors
-Some common errors already solved. An error has occurred in the installation? Please let us know.
-https://github.com/meanstack-io/meanstack.io/wiki/Common-installation-errors
-
-### Configuration
-All the MEANStack framework configuration is in the "config" directory.
-
-#### Accessing Configuration Values
-```js
-$value = require('meanstack').config.get('mail').smtp;
-```
-Where "mail" is the configuration file and "stmp" the object.
-
-### Environment Configuration
-By default the installation of your application is copied the file "env.example.js" and pasted with the name "env.js".
-
-Your path can be configured in "config/app.js" => env.
-
-### Database
-By default the connection provider with MongoDB is disabled by not being configured the connection.
-
-#### Configure
-Edit the file "env.js" stating the details of your connection.
-
-#### Enable provider
-Edit the file "config/app.js" => providers, uncomment the line 'meanstack/lib/database/DatabaseServiceProvider'.
-
-Result
-```js
-'providers': [
-    ...
-    'meanstack/lib/bodyParser/BodyParserServiceProvider',
-    'meanstack/lib/cookieParser/CookieParserServiceProvider',
-    'meanstack/lib/database/DatabaseServiceProvider', // <= Uncomment.
-    'meanstack/lib/response/ResponseServiceProvider',
-    ...
-]
-```
 ## Documentation
-Documentation can be found on the [MEANStack.io](http://meanstack.io)
+Documentation can be found on the [MEANStack.io](http://meanstack.io/docs/)
 
 ## Repositories
 
